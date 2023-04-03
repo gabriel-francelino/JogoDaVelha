@@ -5,15 +5,21 @@ import java.util.Scanner;
 public class JogoDaVelha {
     private Campo[][] velha;
     private String simboloAtual;
-    private Boolean jogo;
-    private String vitoria;
+    private Boolean execucao;
+    private String vencedor;
     private Scanner scan;
 
     public JogoDaVelha() {
         this.velha = new Campo[3][3];
+        for (int i = 0; i < velha.length; i++) {
+            for (int j = 0; j < velha[i].length; j++) {
+                velha[i][j] = new Campo(" ");
+            }
+            System.out.println();
+        }
         this.simboloAtual = "X";
-        this.jogo = true;
-        this.vitoria = "";
+        this.execucao = true;
+        this.vencedor = "";
         this.scan = new Scanner(System.in);
     }
 
@@ -33,20 +39,20 @@ public class JogoDaVelha {
         this.simboloAtual = simboloAtual;
     }
 
-    public Boolean getJogo() {
-        return jogo;
+    public Boolean getExecucao() {
+        return execucao;
     }
 
-    public void setJogo(Boolean jogo) {
-        this.jogo = jogo;
+    public void setExecucao(Boolean jogo) {
+        this.execucao = jogo;
     }
 
-    public String getVitoria() {
-        return vitoria;
+    public String getVencedor() {
+        return vencedor;
     }
 
-    public void setVitoria(String vitoria) {
-        this.vitoria = vitoria;
+    public void setVencedor(String vitoria) {
+        this.vencedor = vitoria;
     }
 
     public void desenharJogo(){
