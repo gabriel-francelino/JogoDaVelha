@@ -1,13 +1,15 @@
 package com.jogodavelha;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
  */
-public class App 
+public class JogoDaVelhaTeste 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        
     }
 }
