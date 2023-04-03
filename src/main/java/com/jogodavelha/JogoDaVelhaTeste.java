@@ -11,6 +11,11 @@ public class JogoDaVelhaTeste
     public static void main( String[] args )
     {
         JogoDaVelha jogo = new JogoDaVelha();
+        // while(jogo.getExecucao()){
+
+        // }
+        jogo.desenharJogo();
+        jogo.desenharJogo();
         jogo.desenharJogo();
         if (!jogo.getVencedor().equals("")) {
             System.out.printf("Jogador %s venceu!\n", jogo.getVencedor());

@@ -56,7 +56,11 @@ public class JogoDaVelha {
     }
 
     public void desenharJogo(){
-        //limpartela();
+        try {
+            new ProcessBuilder("clear").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            System.out.println("Erro ao limpar a tela: " + e.getMessage());
+        }
         System.out.println("    0   1   2");
         System.out.printf("0   %s | %s | %s \n", velha[0][0].getSimbolo(), velha[0][1].getSimbolo(), velha[0][2].getSimbolo());
         System.out.println("-----------------");
@@ -66,7 +70,11 @@ public class JogoDaVelha {
         System.out.println("-----------------");
     }
 
-    public String verificarVitoria(){
+    public String verificarVencedor(){
         return "";
+    }
+
+    public Boolean verificarJogada(){
+        return true;
     }
 }
