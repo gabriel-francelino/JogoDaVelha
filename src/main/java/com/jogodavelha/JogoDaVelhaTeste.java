@@ -14,7 +14,8 @@ public class JogoDaVelhaTeste
         // while(jogo.getExecucao()){
 
         // }
-        jogo.desenharJogo();
+        //jogo.desenharJogo();
+        jogo.jogar();
         if (!jogo.getVencedor().equals("")) {
             System.out.printf("Jogador %s venceu!\n", jogo.getVencedor());
             jogo.setExecucao(false);
@@ -24,7 +25,7 @@ public class JogoDaVelhaTeste
         } catch (Exception e) {
             System.out.println("Erro");
         }
-        
+
         System.out.println("Fim de jogo!");
     }
 }

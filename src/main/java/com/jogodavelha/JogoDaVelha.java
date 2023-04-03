@@ -81,7 +81,42 @@ public class JogoDaVelha {
         return "";
     }
 
-    public Boolean verificarJogada(){
+    public Boolean verificarJogada(int i, int j){
+        if (velha[i][j].equals(" ")) {
+            return false;
+        }
         return true;
+    }
+
+    public void mudarJogador(){
+        if (simboloAtual.equals("X")) {
+            simboloAtual = "O";
+        } else {
+            simboloAtual = "X";
+        }
+    }
+
+    public void jogar(){
+        int i, j;
+
+        System.out.println("Digite as coordenadas da jogada!");
+        do {
+            System.out.println("Linha: ");
+            i = scan.nextInt();
+            System.out.println("Coluna: ");
+            j = scan.nextInt();
+
+            if (i < 0 || i >3 || j < 0 || j >3) {
+                System.out.println("Coordenada inválida!");
+            }
+            if (!verificarJogada(i, j)) {
+                System.out.println("Essa posição já foi ocupada!");
+            } 
+        } while (i < 0 || i >3 || j < 0 || j >3 );
+
+        velha[i][j].setSimbolo(simboloAtual);
+        mudarJogador();
+        
+
     }
 }
