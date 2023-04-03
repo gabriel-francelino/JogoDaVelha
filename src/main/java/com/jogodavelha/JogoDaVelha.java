@@ -61,13 +61,20 @@ public class JogoDaVelha {
         } catch (Exception e) {
             System.out.println("Erro ao limpar a tela: " + e.getMessage());
         }
-        System.out.println("    0   1   2");
-        System.out.printf("0   %s | %s | %s \n", velha[0][0].getSimbolo(), velha[0][1].getSimbolo(), velha[0][2].getSimbolo());
-        System.out.println("-----------------");
-        System.out.printf("0   %s | %s | %s \n", velha[1][0].getSimbolo(), velha[1][1].getSimbolo(), velha[1][2].getSimbolo());
-        System.out.println("-----------------");
-        System.out.printf("0   %s | %s | %s \n", velha[2][0].getSimbolo(), velha[2][1].getSimbolo(), velha[2][2].getSimbolo());
-        System.out.println("-----------------");
+        // System.out.println("    0   1   2");
+        // System.out.printf("0   %s | %s | %s \n", velha[0][0].getSimbolo(), velha[0][1].getSimbolo(), velha[0][2].getSimbolo());
+        // System.out.println("-----------------");
+        // System.out.printf("0   %s | %s | %s \n", velha[1][0].getSimbolo(), velha[1][1].getSimbolo(), velha[1][2].getSimbolo());
+        // System.out.println("-----------------");
+        // System.out.printf("0   %s | %s | %s \n", velha[2][0].getSimbolo(), velha[2][1].getSimbolo(), velha[2][2].getSimbolo());
+        // System.out.println("-----------------");
+        System.out.println("----------");
+        for (Campo[] campos : velha) {
+            for (Campo campo : campos) {
+                System.out.print("| " + campo.getSimbolo());
+            }
+            System.out.println("|\n----------");
+        }
     }
 
     public String verificarVencedor(){
