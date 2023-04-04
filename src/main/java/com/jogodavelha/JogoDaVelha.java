@@ -78,35 +78,35 @@ public class JogoDaVelha {
     }
 
     public void verificarVencedor(){
-        if (velha[0][0].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
+        if (velha[0][0].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[2][2].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][2].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[2][1].equals(simboloAtual)) {
+        else if (velha[0][2].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[2][1].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][0].equals(simboloAtual) && velha[0][1].equals(simboloAtual) && velha[0][2].equals(simboloAtual)) {
+        else if (velha[0][0].getSimbolo().equals(simboloAtual) && velha[0][1].getSimbolo().equals(simboloAtual) && velha[0][2].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[1][0].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[1][2].equals(simboloAtual)) {
+        else if (velha[1][0].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[1][2].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[2][0].equals(simboloAtual) && velha[2][1].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
+        else if (velha[2][0].getSimbolo().equals(simboloAtual) && velha[2][1].getSimbolo().equals(simboloAtual) && velha[2][2].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][0].equals(simboloAtual) && velha[1][0].equals(simboloAtual) && velha[2][0].equals(simboloAtual)) {
+        else if (velha[0][0].getSimbolo().equals(simboloAtual) && velha[1][0].getSimbolo().equals(simboloAtual) && velha[2][0].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][1].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[2][1].equals(simboloAtual)) {
+        else if (velha[0][1].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[2][1].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][2].equals(simboloAtual) && velha[1][2].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
+        else if (velha[0][2].getSimbolo().equals(simboloAtual) && velha[1][2].getSimbolo().equals(simboloAtual) && velha[2][2].getSimbolo().equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
         mudarJogador();
     }
 
     public Boolean verificarJogada(int i, int j){
-        if (velha[i][j].equals(" ")) {
+        if (velha[i][j].getSimbolo().equals(" ")) {
             return false;
         }
         return true;
