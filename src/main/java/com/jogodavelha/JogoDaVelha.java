@@ -3,17 +3,17 @@ package com.jogodavelha;
 import java.util.Scanner;
 
 public class JogoDaVelha {
-    private Campo[][] velha;
+    private String[][] velha; 
     private String simboloAtual;
     private Boolean execucao;
     private String vencedor;
     private Scanner scan;
 
     public JogoDaVelha() {
-        this.velha = new Campo[3][3];
+        this.velha = new String[3][3];
         for (int i = 0; i < velha.length; i++) {
             for (int j = 0; j < velha[i].length; j++) {
-                velha[i][j] = new Campo(" ");
+                velha[i][j] = " ";
             }
             System.out.println();
         }
@@ -23,11 +23,11 @@ public class JogoDaVelha {
         this.scan = new Scanner(System.in);
     }
 
-    public Campo[][] getVelha() {
+    public String[][] getVelha() {
         return velha;
     }
 
-    public void setVelha(Campo[][] velha) {
+    public void setVelha(String[][] velha) {
         this.velha = velha;
     }
 
@@ -62,51 +62,51 @@ public class JogoDaVelha {
         //     System.out.println("Erro ao limpar a tela: " + e.getMessage());
         // }
         System.out.println("    0   1   2");
-        System.out.printf("0   %s | %s | %s \n", velha[0][0].getSimbolo(), velha[0][1].getSimbolo(), velha[0][2].getSimbolo());
+        System.out.printf("0   %s | %s | %s \n", velha[0][0], velha[0][1], velha[0][2]);
         System.out.println("-----------------");
-        System.out.printf("1   %s | %s | %s \n", velha[1][0].getSimbolo(), velha[1][1].getSimbolo(), velha[1][2].getSimbolo());
+        System.out.printf("1   %s | %s | %s \n", velha[1][0], velha[1][1], velha[1][2]);
         System.out.println("-----------------");
-        System.out.printf("2   %s | %s | %s \n", velha[2][0].getSimbolo(), velha[2][1].getSimbolo(), velha[2][2].getSimbolo());
+        System.out.printf("2   %s | %s | %s \n", velha[2][0], velha[2][1], velha[2][2]);
         System.out.println("-----------------");
         // System.out.println("----------");
         // for (Campo[] campos : velha) {
         //     for (Campo campo : campos) {
-        //         System.out.print("| " + campo.getSimbolo());
+        //         System.out.print("| " + campo);
         //     }
         //     System.out.println("|\n----------");
         // }
     }
 
     public void verificarVencedor(){
-        if (velha[0][0].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[2][2].getSimbolo().equals(simboloAtual)) {
+        if (velha[0][0].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][2].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[2][1].getSimbolo().equals(simboloAtual)) {
+        else if (velha[0][2].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[2][1].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][0].getSimbolo().equals(simboloAtual) && velha[0][1].getSimbolo().equals(simboloAtual) && velha[0][2].getSimbolo().equals(simboloAtual)) {
+        else if (velha[0][0].equals(simboloAtual) && velha[0][1].equals(simboloAtual) && velha[0][2].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[1][0].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[1][2].getSimbolo().equals(simboloAtual)) {
+        else if (velha[1][0].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[1][2].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[2][0].getSimbolo().equals(simboloAtual) && velha[2][1].getSimbolo().equals(simboloAtual) && velha[2][2].getSimbolo().equals(simboloAtual)) {
+        else if (velha[2][0].equals(simboloAtual) && velha[2][1].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][0].getSimbolo().equals(simboloAtual) && velha[1][0].getSimbolo().equals(simboloAtual) && velha[2][0].getSimbolo().equals(simboloAtual)) {
+        else if (velha[0][0].equals(simboloAtual) && velha[1][0].equals(simboloAtual) && velha[2][0].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][1].getSimbolo().equals(simboloAtual) && velha[1][1].getSimbolo().equals(simboloAtual) && velha[2][1].getSimbolo().equals(simboloAtual)) {
+        else if (velha[0][1].equals(simboloAtual) && velha[1][1].equals(simboloAtual) && velha[2][1].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
-        else if (velha[0][2].getSimbolo().equals(simboloAtual) && velha[1][2].getSimbolo().equals(simboloAtual) && velha[2][2].getSimbolo().equals(simboloAtual)) {
+        else if (velha[0][2].equals(simboloAtual) && velha[1][2].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
         mudarJogador();
     }
 
     public Boolean verificarJogada(int i, int j){
-        if (velha[i][j].getSimbolo().equals(" ")) {
+        if (velha[i][j].equals(" ")) {
             return true;
         }else{
             return false;
@@ -140,6 +140,6 @@ public class JogoDaVelha {
             } 
         } while (i < 0 || i >3 || j < 0 || j >3 || !verificarJogada(i, j));
 
-        velha[i][j].setSimbolo(simboloAtual);
+        velha[i][j] = simboloAtual;
     }
 }
