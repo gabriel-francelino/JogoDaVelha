@@ -56,25 +56,19 @@ public class JogoDaVelha {
     }
 
     public void desenharJogo(){
-        // try {
-        //     new ProcessBuilder("clear").inheritIO().start().waitFor();
-        // } catch (Exception e) {
-        //     System.out.println("Erro ao limpar a tela: " + e.getMessage());
-        // }
-        System.out.println("    0   1   2");
-        System.out.printf("0   %s | %s | %s \n", velha[0][0], velha[0][1], velha[0][2]);
-        System.out.println("-----------------");
-        System.out.printf("1   %s | %s | %s \n", velha[1][0], velha[1][1], velha[1][2]);
-        System.out.println("-----------------");
-        System.out.printf("2   %s | %s | %s \n", velha[2][0], velha[2][1], velha[2][2]);
-        System.out.println("-----------------");
-        // System.out.println("----------");
-        // for (Campo[] campos : velha) {
-        //     for (Campo campo : campos) {
-        //         System.out.print("| " + campo);
-        //     }
-        //     System.out.println("|\n----------");
-        // }
+        System.out.println("  | /\\ / _ /\\    |\\  /\\");
+        System.out.println("|_| \\/ \\_/ \\/    |/ /  \\\n");
+        System.out.println("\\  / |_ |  |_| /\\");
+        System.out.println(" \\/  |_ |_ | |/  \\");
+        System.out.println("---------------");
+        System.out.println("    0 | 1 | 2 ");
+        System.out.println("---------------");
+        System.out.printf("0 | %s | %s | %s |\n", velha[0][0], velha[0][1], velha[0][2]);
+        System.out.println("---------------");
+        System.out.printf("1 | %s | %s | %s |\n", velha[1][0], velha[1][1], velha[1][2]);
+        System.out.println("---------------");
+        System.out.printf("2 | %s | %s | %s |\n", velha[2][0], velha[2][1], velha[2][2]);
+        System.out.println("---------------");
     }
 
     public void verificarVencedor(){
@@ -124,21 +118,25 @@ public class JogoDaVelha {
     public void jogar(){
         int i, j;
         
-
-        System.out.println("Digite as coordenadas da jogada!");
+        System.out.println("Vez do jogador " + simboloAtual + ". Digite as coordenadas da jogada!");
         do {
             System.out.println("Linha: ");
             i = scan.nextInt();
             System.out.println("Coluna: ");
             j = scan.nextInt();
 
-            if (i < 0 || i >3 || j < 0 || j >3) {
+            if (i < 0 || i > 3 || j < 0 || j >3) {
                 System.out.println("Coordenada inválida!");
             }
             if (!verificarJogada(i, j)) {
                 System.out.println("Essa posição já foi ocupada!");
             } 
-        } while (i < 0 || i >3 || j < 0 || j >3 || !verificarJogada(i, j));
+        } while (i < 0 || i > 3 || j < 0 || j >3 || !verificarJogada(i, j));
+        try {
+            new ProcessBuilder("clear").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            System.out.println("Erro ao limpar a tela: " + e.getMessage());
+        }
 
         velha[i][j] = simboloAtual;
     }

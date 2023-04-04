@@ -13,8 +13,7 @@ public class JogoDaVelhaTeste
             try {
                 jogo.desenharJogo();
                 jogo.jogar();
-                jogo.verificarVencedor();
-                
+                jogo.verificarVencedor();                
             } catch (Exception e) {
                 System.out.println("Erro");
             }
