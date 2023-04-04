@@ -56,12 +56,12 @@ public class JogoDaVelha {
     }
 
     public void desenharJogo(){
-        System.out.println("  | /\\ / _ /\\    |\\  /\\");
-        System.out.println("|_| \\/ \\_/ \\/    |/ /  \\\n");
-        System.out.println("\\  / |_ |  |_| /\\");
-        System.out.println(" \\/  |_ |_ | |/  \\");
+        System.out.println("  | /\\ / _ /\\    |-\\  /\\");
+        System.out.println("|_| \\/ \\_/ \\/    |_/ /  \\\n");
+        System.out.println("   \\  / |_ |  |_| /\\");
+        System.out.println("    \\/  |_ |_ | |/  \\");
         System.out.println("---------------");
-        System.out.println("    0 | 1 | 2 ");
+        System.out.println("  | 0 | 1 | 2 |");
         System.out.println("---------------");
         System.out.printf("0 | %s | %s | %s |\n", velha[0][0], velha[0][1], velha[0][2]);
         System.out.println("---------------");
