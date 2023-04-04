@@ -12,11 +12,6 @@ public class Campo {
     }
 
     public void setSimbolo(String simbolo) {
-        if (this.simbolo.equals(" ")) {
-            this.simbolo = simbolo;
-        } else {
-            System.out.println("Este campo já está ocupado!");
-        }
         this.simbolo = simbolo;
     }
 

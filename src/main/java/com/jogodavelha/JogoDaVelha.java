@@ -56,11 +56,11 @@ public class JogoDaVelha {
     }
 
     public void desenharJogo(){
-        try {
-            new ProcessBuilder("clear").inheritIO().start().waitFor();
-        } catch (Exception e) {
-            System.out.println("Erro ao limpar a tela: " + e.getMessage());
-        }
+        // try {
+        //     new ProcessBuilder("clear").inheritIO().start().waitFor();
+        // } catch (Exception e) {
+        //     System.out.println("Erro ao limpar a tela: " + e.getMessage());
+        // }
         System.out.println("    0   1   2");
         System.out.printf("0   %s | %s | %s \n", velha[0][0].getSimbolo(), velha[0][1].getSimbolo(), velha[0][2].getSimbolo());
         System.out.println("-----------------");
@@ -107,9 +107,10 @@ public class JogoDaVelha {
 
     public Boolean verificarJogada(int i, int j){
         if (velha[i][j].getSimbolo().equals(" ")) {
+            return true;
+        }else{
             return false;
         }
-        return true;
     }
 
     public void mudarJogador(){
@@ -122,6 +123,7 @@ public class JogoDaVelha {
 
     public void jogar(){
         int i, j;
+        
 
         System.out.println("Digite as coordenadas da jogada!");
         do {
@@ -136,7 +138,7 @@ public class JogoDaVelha {
             if (!verificarJogada(i, j)) {
                 System.out.println("Essa posição já foi ocupada!");
             } 
-        } while (i < 0 || i >3 || j < 0 || j >3 );
+        } while (i < 0 || i >3 || j < 0 || j >3 || !verificarJogada(i, j));
 
         velha[i][j].setSimbolo(simboloAtual);
     }
