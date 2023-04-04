@@ -19,6 +19,7 @@ public class JogoDaVelhaTeste
                 System.out.println("Erro");
             }
             if (!jogo.getVencedor().equals("")) {
+                jogo.desenharJogo();
                 System.out.printf("Jogador %s venceu!\n", jogo.getVencedor());
                 jogo.setExecucao(false);
             }
