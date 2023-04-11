@@ -8,6 +8,7 @@ public class JogoDaVelha {
     private Boolean execucao;
     private String vencedor;
     private Scanner scan;
+    private int contador;
 
     public JogoDaVelha() {
         this.velha = new String[3][3];
@@ -96,7 +97,18 @@ public class JogoDaVelha {
         else if (velha[0][2].equals(simboloAtual) && velha[1][2].equals(simboloAtual) && velha[2][2].equals(simboloAtual)) {
             vencedor = simboloAtual;
         }
+        else if(contador == 9){
+            vencedor = "E";
+        }
         mudarJogador();
+    }
+
+    public void resultado(){
+        if (vencedor.equals("E")) {
+            System.out.println("O jogo empatou!");
+        } else {
+            System.out.printf("Jogador %s venceu!\n", vencedor);
+        }
     }
 
     public Boolean verificarJogada(int i, int j){
@@ -139,5 +151,6 @@ public class JogoDaVelha {
         }
 
         velha[i][j] = simboloAtual;
+        contador++;
     }
 }
