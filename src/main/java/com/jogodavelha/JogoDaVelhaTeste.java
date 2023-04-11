@@ -19,7 +19,7 @@ public class JogoDaVelhaTeste
             }
             if (!jogo.getVencedor().equals("")) {
                 jogo.desenharJogo();
-                System.out.printf("Jogador %s venceu!\n", jogo.getVencedor());
+                jogo.resultado();
                 jogo.setExecucao(false);
             }
         }
